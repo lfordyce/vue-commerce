@@ -1,13 +1,13 @@
 <template>
   <div id="section">
-    <md-card md-with-hover>
+    <md-card md-with-hover id="card">
       <save-product-form
         :product="productInForm"
         @submit="onFormSave"
         @cancel="resetProductInForm"
       ></save-product-form>
     </md-card>
-    <md-card md-with-hover>
+    <md-card md-with-hover id="card">
       <product-list
         :products="products"
         @edit="onEditClicked"
@@ -95,5 +95,9 @@ export default {
   margin-top: 40px;
   margin-left: 40px;
   margin-right: 40px;
+}
+#card {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 </style>

@@ -12,10 +12,15 @@
         </md-table-row>
       </md-table-header>
       <md-table-body>
-        <md-table-row v-for="product in products" :key="product.id" @click="onEdit(product)">
-          <md-table-cell>{{product.name}}</md-table-cell>
-          <md-table-cell>{{product.description}}</md-table-cell>
-          <md-table-cell>{{product.price}}:-</md-table-cell>
+        <md-table-row v-for="(product, rowIndex) in products"
+          :key="product.id"
+          :md-item="product"
+          md-auto-select
+          md-selection
+          @click.native="onEdit(product)">
+          <md-table-cell v-for="(column, columnIndex) in product" :key="columnIndex" v-if="columnIndex !== 'id'">
+            {{column}}
+          </md-table-cell>
         </md-table-row>
       </md-table-body>
     </md-table>
@@ -26,8 +31,8 @@
 export default {
   props: ['products'],
   methods: {
-    onEdit (product) {
-      this.$emit('edit', product)
+    onEdit: function (data) {
+      this.$emit('edit', data)
     }
   }
 }

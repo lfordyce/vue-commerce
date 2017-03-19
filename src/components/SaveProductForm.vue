@@ -24,7 +24,7 @@
           <!-- </div> -->
         </md-input-container>
         <md-button class="md-raised md-primary" @click.native="onSubmit()">{{product.id ? 'Update' : 'Add'}} Product</md-button>
-        <md-button class="md-raised md-accent" v-if="product.id" @click.prevent="onCancel()">Cancel</md-button>
+        <md-button class="md-raised md-accent" v-if="product.id" @click.native="onCancel()">Cancel</md-button>
       </form>
     </md-card>
 </template>

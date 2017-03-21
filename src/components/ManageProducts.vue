@@ -11,6 +11,7 @@
       <product-list
         :products="products"
         @edit="onEditClicked"
+        @remove="onRemoveClicked"
       ></product-list>
     </md-card>
   </div>
@@ -77,14 +78,22 @@ export default {
       // refresh the form
       this.resetProductInForm()
     },
-    resetProductInForm () {
-      this.productInForm = initialData().productInForm
+    onRemoveClicked (product) {
+      const index = this.products.findIndex((p) => p.id === product.id)
+      this.products.splice(index, 1)
+
+      if (this.products.id === this.productInForm.id) {
+        this.resetProductInForm()
+      }
     },
     onEditClicked (product) {
       // since objects are passed by reference we need to clone the object
       // either by using Object.asign({}, product), or by using
       // object spreak operator
       this.productInForm = { ...product }
+    },
+    resetProductInForm () {
+      this.productInForm = initialData().productInForm
     }
   }
 }

@@ -19,6 +19,7 @@
           <!-- <div class="form-group" v-bind:class="[{ 'has-danger': formErrors.price }]"> -->
             <label>Price</label>
             <md-input type="number" v-model="product.price"></md-input>
+            <!-- <md-icon md-iconset="fa fa-btc" class="fa fa-btc" aria-hidden="true"></md-icon> -->
             <md-icon>attach_money</md-icon>
             <!-- <div class="form-control-feedback" v-if="formErrors.price">{{formErrors.price}}</div> -->
           <!-- </div> -->

@@ -38,6 +38,11 @@
             </md-button>
           </md-table-cell>
         </md-table-row>
+        <md-table-row v-if="!products.length">
+          <md-table-cell>
+            <strong>You should add some products!</strong>
+          </md-table-cell>
+        </md-table-row>
       </md-table-body>
     </md-table>
   </md-table-card>

@@ -1,21 +1,28 @@
 <template>
-  <!-- <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
-  </div> -->
-  <!-- <product-list></product-list> -->
-  <manage-products></manage-products>
+  <!-- <manage-products></manage-products> -->
+  <div>
+    <header class="app-header">
+      <app-nav></app-nav>
+    </header>
+    <main>
+      <router-view></router-view>
+    </main>
+  </div>
 </template>
 
 <script>
-// import Hello from './components/Hello'
-// import ProductList from './components/ProductList'
-import ManageProducts from './components/ManageProducts'
+// import ManageProducts from './components/ManageProducts'
+import AppNav from './components/AppNav'
 
+// export default {
+//   name: 'app',
+//   components: {
+//     ManageProducts
+//   }
+// }
 export default {
-  name: 'app',
   components: {
-    ManageProducts
+    AppNav
   }
 }
 </script>

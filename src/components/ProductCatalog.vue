@@ -1,6 +1,6 @@
 <template >
   <md-card id="catalog">
-    <p>I'm a product</p>
+    <p id="card">I'm a product</p>
   </md-card>
 </template>
 
@@ -11,8 +11,12 @@ export default {
 
 <style>
 #catalog {
-  margin-top: 40px;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-top: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+#card {
+  margin-left: 16px;
+  margin-right: 16px;
 }
 </style>

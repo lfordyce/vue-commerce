@@ -7,8 +7,8 @@
         class="nav-item nav-link"
         active-class="active"
         exact
-      >
-      Home
+        >
+        Home
       </router-link>
     </md-tab>
 
@@ -18,8 +18,8 @@
         class="nav-item nav-link"
         active-class="active"
         exact
-      >
-      Manage Products
+        >
+        Manage Products
       </router-link>
     </md-tab>
 

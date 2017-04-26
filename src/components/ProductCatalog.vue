@@ -1,11 +1,19 @@
 <template >
   <md-card id="catalog">
-    <p id="card">I'm a product</p>
+    <section>
+      <ul v-for="product in products" track-by-id>
+        <li>{{product.name}}</li>
+      </ul>
+    </section>
   </md-card>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  computed: mapGetters({
+    products: 'getProducts'
+  })
 }
 </script>
 

@@ -33,7 +33,7 @@
           <md-table-cell v-for="(column, columnIndex) in product" :key="columnIndex" v-if="columnIndex !== 'id'">
             {{column}}
             <!-- <md-icon v-if="columnIndex === 'price'" md-iconset="fa fa-btc" class="fa fa-btc" aria-hidden="true"></md-icon> -->
-            <md-button class="md-icon-button" v-if="columnIndex === 'price'" @click.native.stop="onRemove(product)">
+            <md-button class="md-icon-button" v-if="columnIndex === 'price'" @click.native.stop="onRemove(product.id)">
               <md-icon>delete</md-icon>
             </md-button>
           </md-table-cell>
@@ -52,12 +52,12 @@
 export default {
   props: ['products'],
   methods: {
-    onRemove: function (data) {
-      console.log(data)
-      this.$emit('remove', data)
+    onRemove: function (productId) {
+      console.log(productId)
+      this.$emit('remove', productId)
     },
-    onEdit: function (data) {
-      this.$emit('edit', data)
+    onEdit: function (product) {
+      this.$emit('edit', product)
     }
   }
 }
